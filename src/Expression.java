@@ -56,9 +56,7 @@ public class Expression {
     private static boolean hasPrecedence(char op1, char op2) {
         if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-')) {
             return false;
-        }
-
-        return true;
+        } else return op2 != '(';
     }
 
     private static void performOperation(Stack<Double> values, char operator) throws Exception {
